@@ -6,6 +6,7 @@ const path = require('path')
 const dirName =  __dirname ;
 const filePath = path.join(dirName , '../public')
 
+const port = process.env.PORT || 3000
 const app = express(); 
 app.set('view engine' , 'hbs')
 app.use(express.static(filePath) )
@@ -13,7 +14,7 @@ app.use(express.static(filePath) )
 app.get('', (req,res)=>{
     res.render('index',{ title : "Index" , name :"Sara"})
 })
-
+console.log("")
 app.get('/Weather', (req, res)=>{
     
     // console.log(req.query.address)
@@ -44,6 +45,6 @@ if(address){
 //     res.send({"res" : 'Not Found'})
 // })
 
-app.listen(3000,() =>{
-
+app.listen(port,() =>{
+    console.log("working on port"+ port)
 })

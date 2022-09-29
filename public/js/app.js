@@ -5,7 +5,7 @@ fetch('https://puzzle.mead.io/puzzle').then( (response)=>{
     }
 )
 
-fetch('http://localhost:3000/weather?address=alexandria').then( (response)=>{
+fetch('/weather?address=alexandria').then( (response)=>{
         response.json().then(data=>console.log(data))
     }
 )
